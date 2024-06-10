@@ -3,6 +3,47 @@
 ## Docker Workshop Code-snippet
 - https://eji4h.notion.site/Day1-0b3b6693d7b94ab6a9fafde069f9806a
 
+### Buildx
+
+#### 1) Prepare docker environment to run 'buildx'
+```bash
+$ docker buildx create --use
+```
+
+#### 2) run multi platform build using following command.
+```bash
+$ docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -t <image_name> .
+```
+
+### Images type
+
+#### Debian Releases (-bookworm/-bullseye/-buster):
+
+● Image that have -bookworm/ -bullseye/-buster/-stretch extension. Images tagged are codenames for different Debian releases:
+    ○ bookworm: the stable Debian release is 12
+    ○ bullseye: all version 11 variations
+    ○ buster: all version 10 variations, under LTS support
+    ○ stretch: all version 9 variations, extended LTS support
+Example:
+    ● python:3.11.5-bookworm
+    ● python:3.11.5-bullseye
+
+Slim (-slim):
+    ● The slim image is a paired down version of the full image.
+    ● This image generally only installs the minimal packages needed to run your particular tool.
+Example:
+    ● python:3.11.5-slim-bookworm
+    ● python:3.11.5-slim-bullseye
+
+#### Alpine (-alpine):
+● Alpine images are based on the Alpine Linux Project, which is an operating system that was built specifically for use inside of containers.
+● Alpine Linux is built around musl libc and busybox. This makes it small and very resource efficient.
+● A container requires no more than 8 MB and a minimal installation to disk requires around 130 MB of
+storage.
+Example:
+    ● python:3.11.5-alpine, python:3.11.5-alpine3.18
+    ● python:3.11.5-alpine3.17
+
 
 ## Key take aways
 
