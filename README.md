@@ -1,5 +1,9 @@
 # DevOps learning sessions
 
+## Docker Workshop Code-snippet
+- https://eji4h.notion.site/Day1-0b3b6693d7b94ab6a9fafde069f9806a
+
+
 ## Key take aways
 
 ### 1) Continuous Integration (CI)
@@ -45,3 +49,5 @@ Cloud ก็คือเครื่อง server On-Premise ที่มีค�
 - https://www.atlassian.com/incident-management/kpis/common-metrics
 #### 7) DevSusOps: Develop with sustainability in mind.
 - https://www.infoq.com/presentations/devsusops/
+#### 8) Linux distribution timeline:
+- https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
