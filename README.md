@@ -4,6 +4,27 @@
 - Day1: https://eji4h.notion.site/Day1-0b3b6693d7b94ab6a9fafde069f9806a
 - Day2: https://eji4h.notion.site/Day2-b12648dd782f4589947ec61ef0001e75
 
+### Docker Security
+#### 1. Attack: Privilege Escalation
+- Using user 'root' in dockerContainer to have an access to the host's kernel
+- Preventive: must run docker as nonroot user
+
+#### 2. Attack: Surface Attack
+- A fairly new attack surface that was introduced with containers is the use of public images (cloud
+container registry).
+- Two of the most popular public image registries are Docker Hub and Quay and while it’s great that they provide publicly accessible images, you have to make sure that these images were not modified to include malicious software.
+- Preventive: check tags of the image first before using: https://hub.docker.com/_/ubuntu/tags
+
+#### 3. Secure Conatiner
+##### Distroless image (google)
+- Type of image that restricted user that can only "run the application"
+- Contains only Application Runtime (if required) and Application (executable file) and it does not
+provide any OS packages even shell commands.
+#### UBI Micro Image (Red Hat)
+- Reduce the attack surface of Linux containers
+(FROM registry.access.redhat.com/ubi9/ubi-micro:9.2-15)
+
+
 ### Buildx
 
 #### 1) Prepare docker environment to run 'buildx'
@@ -74,7 +95,45 @@ Cloud ก็คือเครื่อง server On-Premise ที่มีค�
 - https://medium.com/@Adrien_Liard/why-you-should-limit-work-in-progress-and-stop-multitasking-ba7ecd4670f
 
 
+### 6) ในการทำ Dockerfile ใช้ประโยชน์จาก Layer Caching 
+เช่น ถ้าเรารู้ว่า package* จะไม่ค่อยเปลี่ยนแปลง เราจึง Copy แค่ package* ไปก่อน
+แล้วค่อย COPY code ของเราส่วนที่เหลือไป จะได้ลดเวลาในการ build image ให้ได้เร็วขึ้น
 
+```Dockerfile
+ROM node:20.9-slim AS build
+WORKDIR /app
+COPY package* ./
+RUN npm i
+COPY . .
+RUN npm run build
+```
+
+### 7) OSI model
+ALB = Application Load Balancer
+- Layer 7: Application Layer
+NLB = Network Load Balancer
+- Layer 4: Transport Layer
+F5: Prevent DDOS attack at Hardware level
+- Layer 2: DataLink Layer
+
+
+### Tip & Tricks in dockerfile
+#### Avoid mistake
+● Running apt-get
+● Using ADD instead of COPY
+● Adding your entire application directory in one line
+● Using :latest
+● Using external services during the build
+● Adding EXPOSE and ENV at the top of your Dockerfile
+● Multiple services running in the same container
+● Build images for every environment
+
+#### Best practices
+● ENTRYPOINT exec form
+● Understand how CMD and ENTRYPOINT interact
+● Docker ignore
+● Use multi-stage builds
+● Leverage build cache
 
 ## Useful URL
 #### 1) Contract Testing: 
@@ -93,3 +152,5 @@ Cloud ก็คือเครื่อง server On-Premise ที่มีค�
 - https://www.infoq.com/presentations/devsusops/
 #### 8) Linux distribution timeline:
 - https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
+#### 9) Docker Security Cheat sheet:
+- https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html
