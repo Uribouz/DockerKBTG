@@ -1,6 +1,0 @@
-@host=http://localhost:3000/api/v1
-
-GET {{host}}/cities/count
-###
-
-GET {{host}}/cities?ids=52,68
