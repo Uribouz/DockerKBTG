@@ -154,3 +154,7 @@ F5: Prevent DDOS attack at Hardware level
 - https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg
 #### 9) Docker Security Cheat sheet:
 - https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html
+#### 10) Team topologies: How to build team
+- https://teamtopologies.com/
+#### 11) Domain-Driven Design
+#### 12) Software Architecture
