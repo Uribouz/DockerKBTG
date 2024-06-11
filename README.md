@@ -1,7 +1,8 @@
 # DevOps learning sessions
 
 ## Docker Workshop Code-snippet
-- https://eji4h.notion.site/Day1-0b3b6693d7b94ab6a9fafde069f9806a
+- Day1: https://eji4h.notion.site/Day1-0b3b6693d7b94ab6a9fafde069f9806a
+- Day2: https://eji4h.notion.site/Day2-b12648dd782f4589947ec61ef0001e75
 
 ### Buildx
 
