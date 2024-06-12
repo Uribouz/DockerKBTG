@@ -158,3 +158,12 @@ F5: Prevent DDOS attack at Hardware level
 - https://teamtopologies.com/
 #### 11) Domain-Driven Design
 #### 12) Software Architecture
+#### 13) Handling multiple env when using Docker Compose
+- https://levelup.gitconnected.com/handling-multiple-environments-in-react-with-docker-543762989783
+#### 14) Coding Standard for team: Using commitizen
+- https://commitizen-tools.github.io/commitizen/
+#### 15) ARGO-CD: GitOps continuous delivery tool for Kubernetes.
+- https://argo-cd.readthedocs.io/en/stable/
+#### 16) GIT CICD
+- https://github.com/docker/setup-buildx-action
+- https://docs.gitlab.com/ee/ci/
